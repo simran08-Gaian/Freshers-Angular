@@ -1,0 +1,22 @@
+<form #todoForm="ngForm">
+
+    <input 
+    type="text"
+    name="my todo"
+    [(ngModel)]="todo"
+    pattern=".{8,}"
+    required
+    >
+    <button (click)="addTodo()">add todo</button>
+</form>
+
+<div *ngFor="let todo of todoSrvc.allTodos; let i = index">
+  <app-todo-card [todo]="todo" [index]="i" />
+</div>
+
+<!-- valid {{todoForm.valid}} -->
+
+{{todoSrvc.allTodos | json}}
+<h3 *ngIf="!todoForm.valid">form is invalid</h3>
+
+

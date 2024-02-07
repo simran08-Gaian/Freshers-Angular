@@ -1,0 +1,9 @@
+<button class="btn" (click)="sharedSrvc.increment()">INCREMENT</button>
+{{sharedSrvc.count}}
+<button class="btn" (click)="sharedSrvc.decrement()">DECREMENT</button>
+
+<div>
+    <button class="btn" (click)="increment()">INCREMENT IN COMPONENT</button>
+    {{this.count}}
+    <button class="btn" (click)="decrement()">DECREMENT IN COMPONENT</button>
+</div>

@@ -1,0 +1,12 @@
+<nav>
+    <!-- <ul>
+        <li routerLink="/">Home</li>
+        <li routerLink="/landing">landing</li>
+        <li routerLink="/">about</li>
+    </ul> -->
+    <!-- <a [routerLink]="['']" [routerLinkActive]="'is-active'">Home</a> -->
+
+    <button [ngClass]="{'/' : 'is-active'}[currentPath]" (click)="nagigateToPage('')">Home</button>
+    <button [ngClass]="{'/landing' : 'is-active'}[currentPath]" (click)="nagigateToPage('/landing')">Landing</button>
+    <button [ngClass]="{'/forms' : 'is-active'}[currentPath]" (click)="nagigateToPage('/forms')">Forms</button>
+</nav>
