@@ -1,4 +1,8 @@
-<nav>
+<nav class="flex gap-3">
+
+    <div *ngIf="isApiCalled">
+        yes api is called 
+    </div>
     <!-- <ul>
         <li routerLink="/">Home</li>
         <li routerLink="/landing">landing</li>
@@ -6,7 +10,9 @@
     </ul> -->
     <!-- <a [routerLink]="['']" [routerLinkActive]="'is-active'">Home</a> -->
 
-    <button [ngClass]="{'/' : 'is-active'}[currentPath]" (click)="nagigateToPage('')">Home</button>
-    <button [ngClass]="{'/landing' : 'is-active'}[currentPath]" (click)="nagigateToPage('/landing')">Landing</button>
-    <button [ngClass]="{'/forms' : 'is-active'}[currentPath]" (click)="nagigateToPage('/forms')">Forms</button>
+    <button class="p-5" [ngClass]="{'/' : 'is-active'}[currentPath]" (click)="nagigateToPage('')">Home</button>
+    <button class="p-5" [ngClass]="{'/landing' : 'is-active'}[currentPath]" (click)="nagigateToPage('/landing')">Landing</button>
+    <button class="p-5" [ngClass]="{'/forms' : 'is-active'}[currentPath]" (click)="nagigateToPage('/forms')">Forms</button>
+    <button class="p-5" [ngClass]="{'/profile' : 'is-active'}[currentPath]" (click)="nagigateToPage('/profile')">Profile</button>
+    <button class="p-5" [ngClass]="{'/profile/user' : 'is-active'}[currentPath]" (click)="nagigateToPage('/profile/user')">user nested component</button>
 </nav>
