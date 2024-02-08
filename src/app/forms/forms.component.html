@@ -1,1 +1,14 @@
-<p class="text-lg text-purple-200 bg-black">forms works!</p>
+<div *ngIf="false">
+    <p class="text-lg text-purple-500">forms works!</p>
+
+
+<span [class.text-red-500]="checkValid()" [class.text-3xl]="checkValid()"> name is {{name}} {{checkValid()}}</span>
+<br>
+<span [class.text-red-500]="valid" [class.text-3xl]="checkValid()"> name is {{name}} {{valid}}</span>
+<br>
+<input [style]="myCustomStyle" class="border-2" type="text" [(ngModel)]="myCustomStyle" />
+</div>
+
+<div >
+    <router-outlet/>
+</div>

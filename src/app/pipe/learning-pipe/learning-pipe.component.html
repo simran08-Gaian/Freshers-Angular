@@ -1,0 +1,13 @@
+<span class="text-3xl">
+    name is {{name | titlecase }}
+</span>
+<br>
+<span class="text-3xl">
+    date is {{date | date:'medium'}}
+</span>
+
+
+<div *ngFor="let user of users |keyvalue">
+    {{user.key  }}
+    {{user.value  }}
+</div>

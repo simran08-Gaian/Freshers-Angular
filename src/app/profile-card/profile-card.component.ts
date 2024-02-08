@@ -8,7 +8,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './profile-card.component.html',
   styleUrls: ['./profile-card.component.scss']
 })
-export class ProfileCardComponent implements OnInit ,OnDestroy{
+export class ProfileCardComponent {
 
   id: string = '';
 

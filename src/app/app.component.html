@@ -1,9 +1,16 @@
-<!-- <h1>hello {{sharedServc.count}}</h1> -->
+<h1 *ngIf="user && sharedServc.isLoggedin">hello {{user}}</h1>
 <main>
     <app-navbar />
     <div style="border: 2px solid rebeccapurple;">
         <router-outlet />
     </div>
     <!-- <app-my-todo /> -->
-    <app-login/>
+    <app-login (loggedIn)="handleOutputByLogin($event)">
+
+        <ng-container>
+            {{user}}
+        </ng-container>
+    </app-login>
+
+
 </main>

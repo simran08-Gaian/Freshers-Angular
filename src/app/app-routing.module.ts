@@ -6,7 +6,9 @@ import { FormsComponent } from './forms/forms.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
-import { AuthGuard } from './guards/auth-guard.guard';
+import { AuthGuard, AuthGuardChild, AuthGuardDeactivate } from './guards/auth-guard.guard';
+import { LearningPipeComponent } from './pipe/learning-pipe/learning-pipe.component';
+import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 
 const routes: Routes = [
   {
@@ -23,13 +25,20 @@ const routes: Routes = [
   {
     path: "forms",
     component: FormsComponent,
+    children: [
+      {
+        path: 'reactiveForm',
+        component: ReactiveFormComponent,
+        title: "Reactive Forms"
+      }
+    ]
 
   },
   {
     path: 'profile',
     component: ProfilesComponent,
-    canActivateChild: [AuthGuard],
-    canDeactivate: [AuthGuard],
+    canActivateChild: [AuthGuardChild],
+    canDeactivate: [AuthGuardDeactivate],
     children:
       [
         {
@@ -37,6 +46,11 @@ const routes: Routes = [
           component: ProfileCardComponent
         }
       ]
+  },
+  {
+    path: 'pipe',
+    component: LearningPipeComponent,
+    title: 'Learning Pipe'
   },
   {
     path: '**',

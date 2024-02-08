@@ -11,9 +11,8 @@ export class UserApiService {
 
 
   getUsers(): Observable<any> {
-    const response = this.http.get("https://randomuser.me/api/")
+    return  this.http.get("https://randomuser.me/api/")
 
-    return response
     // response.subscribe((res) => {
     //   console.log(res);
     //   return res

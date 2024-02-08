@@ -1,0 +1,8 @@
+<p>reactive-form works!</p>
+
+{{myForm.value| json}}
+{{myForm.valid}}
+
+<div [formGroup]="myForm">
+    <input type="text" formControlName="username" />
+</div>

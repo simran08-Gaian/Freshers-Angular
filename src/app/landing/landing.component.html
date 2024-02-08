@@ -1,1 +1,7 @@
 <p>landing works!</p>
+
+
+<input [(ngModel)]="sharedSrvc.globalVarible" class="border-2 border-black" type="text"  placeholder="global var"/>
+
+
+<button (click)="sharedSrvc.globalBoolean = !sharedSrvc.globalBoolean" class="p-2 border-2 m-1 border-black">Toggle globalBoolean</button>

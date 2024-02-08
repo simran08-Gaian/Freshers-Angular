@@ -1,5 +1,8 @@
 <div class="flex ">
-    <div class=" flex flex-col border-2 border-cyan-500">
+    <img [src]="userData?.picture?.large" alt="nodata">
+    <h1 class="text-lg">name is {{userData?.name?.first}}</h1>
+    <div class=" flex flex-col border-2 borde
+    ngOnInit(): void r-cyan-500">
         <button (click)="goto(1)">user 1</button>
         <button (click)="goto(2)">user 2</button>
         <button (click)="goto(3)">user 3</button>

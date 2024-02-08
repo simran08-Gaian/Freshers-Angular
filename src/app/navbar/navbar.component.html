@@ -1,7 +1,15 @@
-<nav class="flex gap-3">
+<div class="border-2 border-red-400">
+    this is the global variable
+    <span class="font-extrabold">
+
+        {{sharedSrvc.globalVarible}}
+        {{sharedSrvc.globalBoolean}}
+    </span>
+</div>
+<nav class="flex gap-3 mb-4">
 
     <div *ngIf="isApiCalled">
-        yes api is called 
+        yes api is called
     </div>
     <!-- <ul>
         <li routerLink="/">Home</li>
@@ -11,8 +19,17 @@
     <!-- <a [routerLink]="['']" [routerLinkActive]="'is-active'">Home</a> -->
 
     <button class="p-5" [ngClass]="{'/' : 'is-active'}[currentPath]" (click)="nagigateToPage('')">Home</button>
-    <button class="p-5" [ngClass]="{'/landing' : 'is-active'}[currentPath]" (click)="nagigateToPage('/landing')">Landing</button>
-    <button class="p-5" [ngClass]="{'/forms' : 'is-active'}[currentPath]" (click)="nagigateToPage('/forms')">Forms</button>
-    <button class="p-5" [ngClass]="{'/profile' : 'is-active'}[currentPath]" (click)="nagigateToPage('/profile')">Profile</button>
-    <button class="p-5" [ngClass]="{'/profile/user' : 'is-active'}[currentPath]" (click)="nagigateToPage('/profile/user')">user nested component</button>
+    <button class="p-5" [ngClass]="{'/landing' : 'is-active'}[currentPath]"
+        (click)="nagigateToPage('/landing')">Landing</button>
+    <button class="p-5" [ngClass]="{'/forms' : 'is-active'}[currentPath]"
+        (click)="nagigateToPage('/forms')">Forms</button>
+    <button class="p-5" [ngClass]="{'/profile' : 'is-active'}[currentPath]"
+        (click)="nagigateToPage('/profile')">Profile</button>
+    <button class="p-5" [ngClass]="{'/profile/user' : 'is-active'}[currentPath]"
+        (click)="nagigateToPage('/profile/user')">user nested component</button>
+    <button class="p-5" [ngClass]="{'/pipe' : 'is-active'}[currentPath]" (click)="nagigateToPage('/pipe')">Pipe</button>
+    <button class="p-5" [ngClass]="{'/forms/reactiveForm' : 'is-active'}[currentPath]" (click)="nagigateToPage('/forms/reactiveForm')">R Forms</button>
+
+
+    <button *ngIf="isLoggedin" (click)="logout()" class="bg-rose-600 p-2 text-white">LOGOUT</button>
 </nav>

@@ -36,18 +36,47 @@ export class ProfilesComponent {
     // const data = this.userApi.getUsers()
     // console.log(data);
 
-    const userApiSub = this.userApi.getUsers().subscribe((res) => {
-      this.userData = res
-      this.sharedSrvc.userDataFromApi.next(res)
-      this.sharedSrvc.isApiCalled = true
-      console.log(this.userData);
-    },
-      (err) => {
+    // const userApiSub = this.userApi.getUsers().subscribe((res) => {
+    //   this.userData = res
+    //   this.sharedSrvc.userDataFromApi.next(res)
+    //   this.sharedSrvc.isApiCalled = true
+    //   console.log(this.userData);
+    // },
+    //   (err) => {
+    //     console.log(err);
+
+    //   })
+
+    //  let newSubApi =  this.userApi.getUsers().subscribe({
+    //     next(value) {
+
+    //       console.log(`new way ${value}`);
+
+    //     }, error(err) {
+    //       console.log(err);
+
+    //     },
+    //   })
+
+    let newSubApi = this.userApi.getUsers().subscribe({
+      next: (value) => {
+        console.log(value.results[0].picture.large);
+        this.userData = value.results[0]
+      },
+      error: (err) => {
         console.log(err);
 
-      })
+      },
+      complete: () => {
+        console.log("done");
+        
+      }
+    })
 
-    this.subs.push(userApiSub)
+
+
+
+    this.subs.push(newSubApi)
   }
 
 }
