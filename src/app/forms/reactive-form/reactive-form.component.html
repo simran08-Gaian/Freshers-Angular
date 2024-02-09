@@ -1,8 +1,44 @@
 <p>reactive-form works!</p>
 
-{{myForm.value| json}}
-{{myForm.valid}}
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="username">
 
-<div [formGroup]="myForm">
-    <input type="text" formControlName="username" />
+{{username.value| json}}
+
+<button (click)="updateUsername()">update</button>
+
+
+<hr />
+
+
+<div class="border-2">
+    <span>from controls grouped</span>
+
+    <form class="p-2" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+        <label for="email">Email: </label>
+        <input id="email" type="email" formControlName="email">
+
+        <label for="password">Password: </label>
+        <input id="password" type="password" formControlName="password">
+
+        <div formGroupName="address">
+            <label for="street">Street: </label>
+            <input id="street" type="text" formControlName="street">
+
+            <div formGroupName="city">
+                <label for="City">City Name: </label>
+                <input id="City" type="text" formControlName="cityName">
+            </div>
+        </div>
+
+        <button type="submit">SUBMIT</button>
+
+    </form>
+<button (click)="pathMyForm()">patch</button>
+
+
+    {{myForm.value | json}}
+    {{myForm.valid |json}}
+
 </div>

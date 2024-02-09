@@ -58,6 +58,8 @@ export class NavbarComponent {
         
         this.isLoggedin = true
       })
+
+
       
       this.mySubs.push(sub)
       this.mySubs.push(loginSub)

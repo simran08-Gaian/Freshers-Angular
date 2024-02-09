@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserApiService } from '../apis/user-api.service';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,7 @@ import { SharedService } from '../shared.service';
   templateUrl: './profiles.component.html',
   styleUrls: ['./profiles.component.scss']
 })
-export class ProfilesComponent {
+export class ProfilesComponent implements OnInit {
 
 
   hasUnsavedChanges() {
@@ -26,6 +26,22 @@ export class ProfilesComponent {
     public router: Router,
     public userApi: UserApiService,
     public sharedSrvc: SharedService) { }
+ 
+
+
+    ngOnInit(): void {
+      console.log(
+      this.userApi.mySubject
+      );
+
+      console.log(
+        this.userApi.myBehaviouralSubject
+      );
+      
+
+   
+    }
+
 
   goto(id: number): void {
     // console.log(`/user/${id}`);
@@ -33,6 +49,9 @@ export class ProfilesComponent {
   }
 
   getUserData() {
+
+    // console.log(this.userApi.getUsers());
+    
     // const data = this.userApi.getUsers()
     // console.log(data);
 
@@ -77,6 +96,11 @@ export class ProfilesComponent {
 
 
     this.subs.push(newSubApi)
+    console.log(this.subs);
+    
   }
+
+
+
 
 }

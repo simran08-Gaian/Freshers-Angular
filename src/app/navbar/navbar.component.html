@@ -28,7 +28,8 @@
     <button class="p-5" [ngClass]="{'/profile/user' : 'is-active'}[currentPath]"
         (click)="nagigateToPage('/profile/user')">user nested component</button>
     <button class="p-5" [ngClass]="{'/pipe' : 'is-active'}[currentPath]" (click)="nagigateToPage('/pipe')">Pipe</button>
-    <button class="p-5" [ngClass]="{'/forms/reactiveForm' : 'is-active'}[currentPath]" (click)="nagigateToPage('/forms/reactiveForm')">R Forms</button>
+    <button class="p-5" [ngClass]="{'/forms/reactiveForm' : 'is-active'}[currentPath]"
+        (click)="nagigateToPage('/forms/reactiveForm')">R Forms</button>
 
 
     <button *ngIf="isLoggedin" (click)="logout()" class="bg-rose-600 p-2 text-white">LOGOUT</button>

@@ -5,10 +5,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CustomPipe implements PipeTransform {
 
-  transform(value: string): string {
-    if(value === ''){
-      return value 
-    }else{
+  transform(value: string | null): string {
+    if (value === '') {
+      return value
+    } else {
       return ` ${value} ${crypto.randomUUID()}`
     }
   }

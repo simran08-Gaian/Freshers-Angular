@@ -38,7 +38,7 @@ const routes: Routes = [
     path: 'profile',
     component: ProfilesComponent,
     canActivateChild: [AuthGuardChild],
-    canDeactivate: [AuthGuardDeactivate],
+    // canDeactivate: [AuthGuardDeactivate],
     children:
       [
         {

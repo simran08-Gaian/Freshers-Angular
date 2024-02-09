@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http"
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.myBehaviouralSubject.next('hello')
+   }
 
+
+  mySubject : Subject<any> = new Subject() 
+  myBehaviouralSubject : BehaviorSubject<string> = new BehaviorSubject('data from myBehaviouralSubject') 
 
   getUsers(): Observable<any> {
     return  this.http.get("https://randomuser.me/api/")
